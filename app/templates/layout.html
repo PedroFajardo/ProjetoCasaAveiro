@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Casa Aveiro</title>
+
+    {% load staticfiles %}
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'content/bootstrap.min.css' %}" />
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" type="text/css" href="{% static 'content/site.css' %}" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="{% url 'home' %}"><i class="fa fa-home"></i>     Casa Aveiro</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarDefault" aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'adicionar' %}">Adicionar Algo</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'listArca' %}">Arca</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'listaDispensa' %}">Dispensa</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'listaFrigorifico' %}">Frigorifico</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'listaFruta' %}">Fruta</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'listaWC' %}">WC</a>
+          </li>          
+        </ul>
+      </div>
+    </nav>
+
+    <main role="main">
+        <div class="container body-content">
+            {% block content %} {% endblock %}
+        </div> <!-- /container -->
+    </main>
+
+    <div class="footer">
+        <hr />
+        <p>&copy; {{ year }} - Casa Aveiro</p>
+    </div>
+
+    <!-- JQuery and Bootstrap core
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="{% static 'scripts/jquery-3.3.1.slim.min.js' %}"></script>
+    <script src="{% static 'scripts/popper.min.js' %}"></script>
+    <script src="{% static 'scripts/bootstrap.min.js' %}"></script>
+    {% block scripts %} {% endblock %}
+
+  </body>
+</html>

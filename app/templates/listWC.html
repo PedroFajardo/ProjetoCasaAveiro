@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block content %}
+
+    {% if things %}
+    <div class="row">
+        <div class="headings">
+            <h2 class="title">Casa de Banho</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 col-sm-3 col-xs-0"></div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <form action="." method="POST" class="form-horizontal">
+                {% csrf_token %}
+                {% for thing in things %}
+                <div class="row">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" style="width:175px">{{ thing.name }}</span>
+                        </div>
+                        <span class="input-group-btn">
+                            <button type="button" class="quantity-left-minus btn btn-danger btn-number"  data-type="minus" data-field="" onclick="minus('{{ thing.name }}')">
+                                <span><i class="fa fa-minus-circle"></i></span>
+                            </button>
+                        </span>
+                        <input type="text" id="quantity" name="{{ thing.name }}" class="form-control input-number" value="{{ thing.quantity }}" min="0" max="20" style="text-align:center">
+                        <span class="input-group-btn">
+                            <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus" data-field="" onclick="plus('{{ thing.name }}')">
+                                <span><i class="fa fa-plus-circle"></i></span>
+                            </button>
+                        </span>
+                    </div>
+                </div>
+                <div class="row" style="height:10px"></div>
+                {% endfor %}
+                <div class="row">
+                    <div class="col-md-3 col-sm-3 col-xs-3">
+                        <input type="submit" value="Guardar" class="btn btn-default"/>
+                    </div>
+                </div>
+            </form> 
+        </div>
+    </div>  
+    {% endif %}
+    
+
+{% endblock%}
+
+{% block scripts %}
+    <script src="{% static 'scripts/adicionar.js' %}"></script>
+{% endblock %}

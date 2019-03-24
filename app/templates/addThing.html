@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+    <div class="row" style="height:50px"></div>
+
+    {% if inserted  %}
+        <div class="row" style="color:green">
+            <h3> Item inserido! </h3>
+        </div>
+    {% endif %}
+
+    {% crispy form %}
+
+{% endblock %}
