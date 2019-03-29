@@ -9,8 +9,8 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-3 col-sm-3 col-xs-0"></div>
-        <div class="col-md-6 col-sm-6 col-xs-12">
+        <div class="col-md-3 col-sm-3 col-xs-1"></div>
+        <div class="col-md-6 col-sm-6 col-xs-10">
             <form action="." method="POST" class="form-horizontal">
                 {% csrf_token %}
                 {% for thing in things %}
@@ -39,11 +39,11 @@
                         <input type="submit" value="Guardar" class="btn btn-default"/>
                     </div>
                 </div>
-            </form> 
+            </form>
         </div>
-    </div>  
+    </div>
     {% endif %}
-    
+
 
 {% endblock%}
 

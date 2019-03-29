@@ -1,4 +1,4 @@
-﻿
+
 body {
     padding-top: 50px;
     padding-bottom: 20px;
@@ -47,7 +47,7 @@ input[type="checkbox"].input-validation-error {
     position: fixed;
     left: 0;
     bottom: 0;
-    width: 100%;
+    width: auto;
  }
 
  .headings {
@@ -56,11 +56,11 @@ input[type="checkbox"].input-validation-error {
     align-items: center;
     padding: 2em 0;
   }
-  
+
   .title {
     margin: 0;
   }
-  
+
   .hr {
     display: block;
     flex: 1;
